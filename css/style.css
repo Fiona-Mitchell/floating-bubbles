@@ -1,0 +1,37 @@
+:root{
+
+  --background: #EBB3A9;
+  --bubble: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--background);
+}
+
+.bubble{
+  position: absolute;
+  background: var(--bubble);
+  height: 10rem;
+  width: 10rem;
+  outline: 0;
+  overflow: none;
+  border-radius: 50%;
+}
+
+.bubble::before{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
