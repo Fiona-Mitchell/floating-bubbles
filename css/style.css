@@ -1,7 +1,9 @@
 :root{
 
   --background: #EBB3A9;
-  --bubble: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+  --bubble: linear-gradient(187deg, rgba(255,255,255,1) 0%, rgba(255,87,142,1) 39%, rgba(141,111,215,1) 82%);
+  --bubble-2: linear-gradient(173deg, rgba(255,255,255,1) 0%, rgba(87,255,222,1) 39%, rgba(141,111,215,1) 82%);
+  --bubble-3: linear-gradient(163deg, rgba(255,255,255,1) 1%, rgba(0,212,255,1) 11%, rgba(9,9,121,1) 56%, rgba(11,60,26,1) 76%);
 }
 
 *{
@@ -21,17 +23,39 @@ body{
 .bubble{
   position: absolute;
   background: var(--bubble);
-  height: 10rem;
-  width: 10rem;
-  outline: 0;
-  overflow: none;
+  height: 1rem;
+  width: 1rem;
   border-radius: 50%;
+  animation: fly 6s ease-in infinite;
 }
 
-.bubble::before{
-  height: 100%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.bubble-2 {
+  position: absolute;
+  background: var(--bubble-2);
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  animation: fly 5s ease-in infinite;
 }
+
+.bubble-3 {
+  position: absolute;
+  background: var(--bubble-3);
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  animation: fly 7s ease-in infinite;
+}
+
+
+@keyframes fly{
+
+  0% {
+    transform: translateY(100vh) translateX(5vh);
+  }
+
+  100% {
+  transform: translateY(-100vh) translateX(-10vh);
+  }
+
+  }
